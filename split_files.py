@@ -1,21 +1,21 @@
-"""
-Splits sql database into mutiple csv files.
-"""
-
 import os
 import sqlite3
 import csv
 
 def split_file(db_name, table_name, output_path, num_samples):
+	"""
+	Splits sql database table into mutiple csv files.
+	"""
 
+	# Define database name and table name
 	db_name = db_name
 	table_name = table_name
 
+	# Define output path
 	output_path = output_path
 	output_name_template='output_%s.csv'
 	current_piece = 1
 
-	# Open the file
 	# Create a connection and get a cursor
 	connection = sqlite3.connect(db_name)
 	cursor = connection.cursor()

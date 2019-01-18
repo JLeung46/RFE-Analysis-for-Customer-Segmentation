@@ -1,6 +1,8 @@
-#"s3a://avito-ads/load/lo/*.gz"
 
 class Data:
+	"""
+	Class to load data, given a pre-defined schema.
+	"""
 	def __init__(self, schema):
 		self.schema = schema
 		self.dataframe = None

@@ -9,7 +9,9 @@ def extract(row):
     return tuple(row.features_scaled.toArray().tolist())
 
 def save_data(df, save_dir):
-	# Save dataframe to S3 as csv
+	""" 
+    Save dataframe to S3 as csv
+    """
 	df.write.format('csv').save(save_dir)
 
 def scale_features(df, inp_col_names, output_col_name, scaled_col_name):

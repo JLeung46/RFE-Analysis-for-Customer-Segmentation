@@ -2,6 +2,9 @@ from pyspark.ml.clustering import KMeans
 from pyspark.ml.feature import VectorAssembler
 
 class KMeansModel:
+    """
+    Class to train a KMeans model and return the predictions
+    """
     def __init__(self):
         self.assembled_df = None
 

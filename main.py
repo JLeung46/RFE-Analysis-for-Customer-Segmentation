@@ -57,15 +57,15 @@ if __name__ == '__main__':
 	scaled_data = scaled_data.select(["recency", "total_clicks", "count", "features_scaled"]).rdd\
                .map(extract).toDF().show(['recency_scaled', 'total_clicks_scaled', 'count_scaled'])
 
+    # Create an id column to merge two dataframes
 	sample_df = sample_df.withColumn("id", monotonically_increasing_id())
-
 	scaled_data = scaled_data.withColumn("id", monotonically_increasing_id())
-
 	final_df = sample_df.join(scaled_data, "id", "left").drop("id")
 
-	# Save df to S3 as csv
+	# Save dataframe to S3 as csv
 	save_data(final_df, "s3://avito-testing/data/train_data")
 
+	# Train KMeans
 	kmeans = KMeansModel()
 	assembler_df = kmeans.assemble_features(final_df, ["recency_scaled", "total_clicks_scaled", "count_scaled" ], "features")
 	preds = kmeans.train(k=5)
