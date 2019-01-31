@@ -3,7 +3,7 @@ from datetime import datetime
 
 class RFE:
 	"""
-	Class to calulate the Recency, Frequency and Enagement of users.
+	Class to calulate the Recency, Frequency and Engagement of users.
 	"""
 	def __init__(self, data):
 		self.data = data
