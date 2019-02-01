@@ -1,5 +1,7 @@
 # Behavioral Based Customer-Segmentation
 
+**Currently working on this project**
+
 This project uses KMeans clustering to build behavioral based customer segments using RFE (Recency, Frequency, Engagement) analysis. RFE analysis is a variation of the RFM (Recency, Frequency, Monetary) marketing model used to quantify customer behavior. The framework works by grouping customers based on how recently a customer has purchased (recency), how often (frequency), and by how much (monetary). For the particular dataset used in this project, recency is defined as the last time a user clicked on an ad, frequency as the number of total ad clicks, and engagement as the total number of pages visited.  Aftering defining customer segments, it allows businesses to answer questions such as:
 
 1.) Who are your loyal customers?
